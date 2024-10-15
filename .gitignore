@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CarRaceGame/.vs
+/CarRaceGame/bin/Debug/net8.0
+/CarRaceGame/obj
+/CarRaceGame.Tests/.vs/CarRaceGame.Tests
+/CarRaceGame.Tests/obj
+/CarTests/bin/Debug/net8.0
+/CarTests/obj
+/TrackTests/bin/Debug/net8.0
+/TrackTests/obj
