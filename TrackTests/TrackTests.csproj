@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarRaceGame\CarRace.Logic.csproj" />
     <ProjectReference Include="..\CarRaceGame\CarRaceGame.csproj" />
   </ItemGroup>
 

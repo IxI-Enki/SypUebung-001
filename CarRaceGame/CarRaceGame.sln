@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRaceGame", "CarRaceGame.csproj", "{6B7F4A6A-7D04-424C-A4FD-6461B47D2ADC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRace.Logic", "CarRace.Logic.csproj", "{6B7F4A6A-7D04-424C-A4FD-6461B47D2ADC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTests", "..\CarTests\CarTests.csproj", "{F9BBC8C8-F7C6-4C21-AFC3-2850DB19E249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRace.Tests", "..\CarTests\CarRace.Tests.csproj", "{F9BBC8C8-F7C6-4C21-AFC3-2850DB19E249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackTests", "..\TrackTests\TrackTests.csproj", "{F1EC6496-ECF1-4E14-9996-D6793DB15C99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackTests", "..\TrackTests\TrackTests.csproj", "{F1EC6496-ECF1-4E14-9996-D6793DB15C99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

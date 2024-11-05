@@ -1,8 +1,8 @@
-namespace CarTests;
-using CarRaceGame;
+using CarRace.Logic;
+namespace CarRace.Tests;
 
 [TestClass]
-public class CarTest
+public class CarTests
 {
   [TestMethod]
   public void ItShouldReturnZeroSpeed_IfCarIsNew()
@@ -50,14 +50,16 @@ public class CarTest
     car.Gear = expectedGear;
   }
 
+
+
   [TestMethod]
-  public void ItShouldReturnAValidSpeed_IfSpeedIsBetween30And180()
+  public void ItShouldReturnZeroSpeed_IfCarHasNotAccelerated()
   {
     Car car = new() { Gear = 3 };
 
     bool isInValidRange = false;
 
-    if (car.Speed >= 30 && car.Speed <= 180)
+    if (car.Speed == 0)
       isInValidRange = true;
 
     Assert.IsTrue(isInValidRange);
@@ -73,4 +75,30 @@ public class CarTest
     Assert.IsNotNull(exception);
     Assert.AreEqual("Gear must be between 0 and 6." , exception.Message);
   }
-} 
+
+  [TestMethod]
+  public void ItShouldHaveASpeedBetween30And180_GivenGearAndAccelerated()
+  {
+    Car car = new();
+
+    car.Gear = 3;
+
+    car.Accelerate();
+
+    bool isValidSpeed = car.Speed >= 30 && car.Speed <= 180 ? true : false;
+
+    Assert.IsTrue(isValidSpeed);
+  }
+
+  [TestMethod]
+  public void ItShouldHaveSpeedOf60_GivenGear3AndDiceShows2()
+  {
+    Car car = new(gear: 3 , dice: new FakeDice(2));
+
+    car.Accelerate();
+
+    Assert.AreEqual(60 , car.Speed);
+  }
+
+
+}

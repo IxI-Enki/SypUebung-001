@@ -1,7 +1,6 @@
-﻿
-using System.CodeDom.Compiler;
+﻿using System.Threading.Channels;
 
-namespace CarRaceGame;
+namespace CarRace.Logic;
 
 internal class Program
 {
@@ -10,16 +9,13 @@ internal class Program
   private static void RunGame()
   {
     Track newTrack = GenerateTrack();
-
     int counter = 1;
     foreach (Track.TrackSegment segment in newTrack.Segments!)
     {
       Console.WriteLine(
         $"Segment Number {counter++} of the track, is {segment.Length}km long\n" +
         $"and has a curvature of {segment.Curvature} degrees");
-    
     }
-
   }
 
   private static Track GenerateTrack()

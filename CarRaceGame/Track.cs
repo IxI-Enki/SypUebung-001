@@ -1,4 +1,4 @@
-﻿namespace CarRaceGame;
+﻿namespace CarRace.Logic;
 
 public class Track
 {

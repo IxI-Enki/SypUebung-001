@@ -1,14 +1,20 @@
-﻿namespace CarRaceGame;
+﻿namespace CarRace.Logic;
 
-public class Car(int gear = 0)
+public class Car(int gear = 0 , IDice? dice = null)
 {
   #region FIELDS
-  private float _speed;
+  private float _speed = 0;
   private int _gear = gear;
+  private IDice? _dice = dice;
   #endregion
 
   #region PROPERTIES
-  public float Speed => _gear * 10;
+  public float Speed { get; set; }
+
+  public void Accelerate()
+  {
+    Speed = 10 * _gear * _dice!.Dots;
+  }
 
   public int Gear
   {
@@ -24,5 +30,4 @@ public class Car(int gear = 0)
     }
   }
   #endregion  
-
 }
