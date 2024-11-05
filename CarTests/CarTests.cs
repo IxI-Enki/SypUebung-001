@@ -82,31 +82,30 @@ public class CarTests
     car.Gear = 3;
 
     car.Accelerate();
-
-    bool isValidSpeed = car.Speed >= 30 && car.Speed <= 180 ? true : false;
-
-    Assert.IsTrue(isValidSpeed);
+    Assert.IsTrue(car.Speed >= 30 && car.Speed <= 180);
   }
 
   [TestMethod]
   public void ItShouldHaveSpeedOf60_GivenGear3AndDiceShows2()
   {
-    Car car = new(gear: 3 , dice: new FakeDice());
+    FakeDice fakeDice = new();
 
+    Car car = new(fakeDice);
+
+    car.Gear = 3;
     car.Accelerate();
 
     Assert.AreEqual(60 , car.Speed);
   }
+
   [TestMethod]
   public void ItShouldCallDiceRoll_GivenAccelerateIsCalled()
   {
-    //ARRANGE
     FakeDice fakeDice = new FakeDice();
     Car car = new Car(dice: fakeDice);
 
-    //ACT
     car.Accelerate();
-    //ASSERT      
+
     Assert.IsTrue(fakeDice.RollWasCalled);
   }
 

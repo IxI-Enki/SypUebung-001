@@ -1,20 +1,25 @@
 ﻿namespace CarRace.Logic;
 
-public class Car(int gear = 0 , IDice? dice = null)
+public class Car 
 {
+  public Car() : this(new DefaultDice())
+  {
+  }
+  public Car(IDice dice)
+  {
+    _dice = dice;
+  }
+
+
+
   #region FIELDS
   private float _speed = 0;
-  private int _gear = gear;
-  private IDice? _dice = dice;
+  private int _gear = 0;
+  private IDice? _dice;
   #endregion
 
   #region PROPERTIES
-  public float Speed { get; set; }
-
-  public void Accelerate()
-  {
-    Speed = 10 * _gear * _dice!.Dots;
-  }
+  public float Speed =>_speed;
 
   public int Gear
   {
@@ -29,5 +34,14 @@ public class Car(int gear = 0 , IDice? dice = null)
         throw new ArgumentException("Gear must be between 0 and 6.");
     }
   }
-  #endregion  
+  #endregion
+
+  #region METHODS
+  public void Accelerate() 
+  {
+    _dice.Roll();
+    _speed = Gear * 10 * _dice.Dots;
+
+  }
+  #endregion
 }

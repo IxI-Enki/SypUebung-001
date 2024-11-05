@@ -9,7 +9,7 @@ public class SectionTest
   {
     var someSpeed = 60;
     var someLength = 400;
-    Section section = new Section(someSpeed , someLength);
+    Section section = new(someSpeed , someLength);
 
     Assert.AreEqual(someSpeed , section.MaxSpeed);
     Assert.AreEqual(someLength , section.Length);
