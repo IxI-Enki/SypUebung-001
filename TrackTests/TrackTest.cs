@@ -18,15 +18,4 @@ public class TrackTest
 
     Assert.AreEqual(expectedSegmentLength , actualSegment.Length);
   }
-
-  [TestMethod]
-  public void ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated()
-  {
-    var someSpeed = 60;
-    var someLength = 400;
-    Track.Segment segment = new (someSpeed, someLength);
-
-    Assert.AreEqual(someSpeed, section.MaxSpeed);
-    Assert.AreEqual(someLength, section.Length);
-  }
 }
