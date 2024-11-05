@@ -1,15 +1,11 @@
 ﻿namespace CarRace.Logic;
 
-public class Section
+public class Section(int speed , int length)
 {
-  public int MaxSpeed { get; set; }
-  public int Length { get; set; }
-
-  public Section(int speed , int length)
-  {
-    MaxSpeed = speed;
-    Length = length;
-  }
+  #region PROPERTIES
+  public int MaxSpeed { get; set; } = speed;
+  public int Length { get; set; } = length;
+  #endregion
 }
 
 #region MY OTHER APROACH
