@@ -50,8 +50,6 @@ public class CarTests
     car.Gear = expectedGear;
   }
 
-
-
   [TestMethod]
   public void ItShouldReturnZeroSpeed_IfCarHasNotAccelerated()
   {
@@ -93,12 +91,23 @@ public class CarTests
   [TestMethod]
   public void ItShouldHaveSpeedOf60_GivenGear3AndDiceShows2()
   {
-    Car car = new(gear: 3 , dice: new FakeDice(2));
+    Car car = new(gear: 3 , dice: new FakeDice());
 
     car.Accelerate();
 
     Assert.AreEqual(60 , car.Speed);
   }
+  [TestMethod]
+  public void ItShouldCallDiceRoll_GivenAccelerateIsCalled()
+  {
+    //ARRANGE
+    FakeDice fakeDice = new FakeDice();
+    Car car = new Car(dice: fakeDice);
 
+    //ACT
+    car.Accelerate();
+    //ASSERT      
+    Assert.IsTrue(fakeDice.RollWasCalled);
+  }
 
 }

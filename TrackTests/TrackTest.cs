@@ -2,15 +2,16 @@ using CarRace.Logic;
 namespace TrackTests;
 
 [TestClass]
-public class TrackTest
+public class SectionTest
 {
   [TestMethod]
-  public void ItShouldReturnTrue_IfTheTrackIsLongerThanZero()
+  public void ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated()
   {
-    Track.TrackSegment actualSegment = new(1);
+    var someSpeed = 60;
+    var someLength = 400;
+    Section section = new Section(someSpeed , someLength);
 
-    int expectedSegmentLength = 1;
-
-    Assert.AreEqual(expectedSegmentLength , actualSegment.Length);
+    Assert.AreEqual(someSpeed , section.MaxSpeed);
+    Assert.AreEqual(someLength , section.Length);
   }
 }

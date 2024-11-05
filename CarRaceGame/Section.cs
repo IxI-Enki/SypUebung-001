@@ -1,7 +1,17 @@
 ﻿namespace CarRace.Logic;
 
-public class Track
+public class Section
 {
+  public int MaxSpeed { get; set; }
+  public int Length { get; set; }
+
+  public Section(int speed , int length)
+  {
+    MaxSpeed = speed;
+    Length = length;
+  }
+
+  /*
   #region EMBEDED TRACK SEGMENT
   public class TrackSegment(int length = 1 , int? curvature = 0)
   {
@@ -25,4 +35,6 @@ public class Track
   #endregion
 
   public List<TrackSegment>? Segments { get; set; } = new List<TrackSegment>();
+*/
+
 }
