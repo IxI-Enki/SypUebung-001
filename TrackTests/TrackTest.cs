@@ -3,6 +3,7 @@ namespace TrackTests;
 
 [TestClass]
 public class TrackTest
+{
   [TestMethod]
   public void ItShouldReturnTrue_IfTheTrackIsLongerThanZero()
   {
